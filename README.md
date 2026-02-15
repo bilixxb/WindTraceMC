@@ -1,6 +1,6 @@
 # WindTrace 风行迷踪MC版
 
-[简体中文](https://)      [English](https://)
+[简体中文](/help/README_zh.md)      [English](/help/README_en.md)
 
 本插件允许您将游戏《原神》中有时复刻的热门玩法”风行迷踪“添加到您的Minecraft 服务器中。
 
@@ -55,3 +55,25 @@
 
 
 
+## 如果您是管理员...
+要创建一个地图，请按照顺序执行以下操作：
+1. 检查前置： 
+
+必要前置：
+- [Holographic Displays](https://dev.bukkit.org/bukkit-plugins/holographic-displays)
+
+可选前置：
+- [ProtocolLib](https://spigotmc.org/resources/protocollib.1997/)
+- [LibsDisguises](https://github.com/libraryaddict/LibsDisguise)（这个不装可能会报错，因为我bug不想修）
+
+> ~~别问为什么Holographic Displays这么不起眼却是必要前置，问就是史山代码不好改[doge]~~
+2. 站在大厅处，使用`/wt setLobby`命令创建大厅位置。如果您没有执行这一步，请***一定***要执行(~~我才不会告诉你我不想修bug了~~)；如果您执行过这一步，您可以跳过。
+3. 使用多世界插件导入地图，然后使用 `/wt create <地图名> <显示名称>`创建地图。创建地图后，您随时可使用 `/wt <地图名>` 来重新编辑这个地图。
+4. 使用以下指令修改地图属性：
+- `/wt setCage` 设置游戏准备阶段猎手的笼子。
+- `/wt setCenter` 设置地图中心（这里是游戏开始前玩家的等待区域以及游戏开始后玩家被传送到的区域）。
+- `/wt setDevice` 设置发信机/暖源。
+- `/wt removeDevice` 移除发信机/暖源。
+- `/wt attributes mode <模式名>` 设置地图模式。可选模式： `NORMAL`, `WINTER`。
+- `/wt attributes minPlayers <数量>` 设置最小人数。默认情况下为4。
+- `/wt attributes maxPlayers <数量>` 设置最大人数。默认情况下为4。
