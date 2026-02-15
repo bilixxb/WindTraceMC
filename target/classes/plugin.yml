@@ -1,0 +1,29 @@
+name: WindTraceMC
+version: '1.0-SNAPSHOT'
+main: com.bilixxb.WindTraceMC
+api-version: '1.20'
+softdepend:  [HolographicDisplays,ProtocolLib,LibsDisguises]
+commands:
+  wt:
+    aliases:
+      - "WindTrace"
+Permissions:
+  windTrace.admin.*:
+    default: op
+    children:
+      windTrace.admin.create: true
+      windTrace.admin.attributes: true
+      windTrace.admin.attributes.mode: true
+      windTrace.admin.attributes.addDisguiseBlock: true
+      windTrace.admin.attributes.removeDisguiseBlock: true
+      windTrace.admin.attributes.minPlayers: true
+      windTrace.admin.attributes.maxPlayers: true
+      windTrace.admin.attributes.hunterAmount: true
+      windTrace.admin.setDevice: true
+      windTrace.admin.removeDevice: true
+      windTrace.admin.forceStart: true
+      windTrace.admin.save: true
+      windTrace.admin.setCage: true
+      windTrace.admin.setCenter: true
+      windTrace.admin.viewOthersStat: true
+      windTrace.admin.setLobby: true

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WindTraceMC:jar">
+    <output-path>E:/server/plugins</output-path>
+    <root id="archive" name="WindTraceMC.jar">
+      <element id="module-output" name="WindTraceMC" />
+    </root>
+  </artifact>
+</component>

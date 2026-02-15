@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="HolographicDisplays">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/HolographicDisplays.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ProtocolLib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LibsDisguises-11.0.14-Github.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

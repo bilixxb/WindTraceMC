@@ -1,0 +1,305 @@
+startup:
+  - "欢迎使用风行迷踪插件！"
+  - "bilibili @游戏解说小小白 制作"
+help:
+  header: "§e风行迷踪MC版"
+  help: "§e/wt help 展示此消息"
+  join: "§e/wt join 加入一个地图"
+  rejoin: "§e/wt rejoin或/wt r 重新加入一局已开始的游戏"
+  stat: "§e/wt stat 展示统计数据"
+  create: "§e/wt create <内部名> <显示名> 创建一张新地图"
+  attributes:
+    out: "§e/wt attributes 设置地图属性(/wt help attributes展示此命令用法)"
+    mode: "§e/wt attributes mode <normal/winter> 设置地图模式"
+    minplayers: "§e/wt attributes minplayers <数量> 设置最小人数"
+    maxplayers: "§e/wt attributes maxplayers <数量> 设置最大人数"
+    hunteramount: "§e/wt attributes hunteramount <数量/百分比> 设置猎手数量"
+  setCage: "§e/wt setCage 设置游戏准备阶段猎手的笼子。"
+  setCenter: "§e/wt setCenter 设置地图中心（这里是游戏开始前玩家的等待区域以及游戏开始后玩家被传送到的区域）。"
+  save: "§e/wt save 保存处于编辑模式下的地图"
+  setdevice: "§e/wt setdevice 设置发信机/暖源"
+  removedevice: "§e/wt removedevice 移除发信机/暖源"
+  forcestart: "§e/wt forcestart 强制开始一局游戏"
+commandFailed: "§c目前无法使用此命令!"
+notInEditingMode: "§c该命令仅限地图编辑模式使用！"
+createSuccessful:
+  - "§a已成功创建/加载 {internalName} !"
+  - "§a使用 /tp <x> <y> <z>以传送至地图位置"
+createFailedWorldNotExists: "§c创建 {internalName} 失败：未找到对应世界!"
+signalingDeviceSet:
+  - "§a右击一个方块以设置发信机。"
+  - "§a你有60秒时间去设置。"
+signalingDeviceRemoving:
+  - "§a右击一个发信机以移除它。"
+  - "§a你有60秒时间去设置。"
+alreadyInSettingSignalingDeviceMode: "§c你已处在设置发信机模式，请右击方块以设置发信机！"
+alreadyInEditingMode: "§c你已处在编辑模式！"
+successfullySetSignalingDevice: "§a发信机设置成功！"
+successfullyRemoveSignalingDevice: "§a发信机移除成功！"
+invalidMode: "§c地图模式无效！可用模式：NORMAL,WINTER"
+minBiggerThanMax: "§c最小玩家数不能大于最大玩家数！"
+maxSmallerThanMin: "§c最大玩家数不能小于最小玩家数！"
+hunterMoreThanMax: "§c猎手数量不能大于最大玩家数！"
+modeSuccessfullySet: "§a已设置地图模式为 {MODE} !"
+minPlayersSuccessfullySet: "§a已设置最小玩家数为 {MINPLAYERS} !"
+maxPlayersSuccessfullySet: "§a已设置最大玩家数为 {MAXPLAYERS} !"
+hunterAmountSuccessfullySet: "§a已设置猎手数量为 {HUNTERAMOUNT} !"
+hunterAmountSuccessfullySetPercent: "§a已设置猎手数量占总人数的 {PERCENT}% ({HUNTERAMOUNT}) !"
+invalidNumberFormat: "§c数字格式无效！"
+invalidPercent: "§c无效的百分比！"
+zeroHunterAmount: "§c至少要有1个猎手，已自动设置为1！"
+atLeastOneRebel: "§c至少要有1个游侠，已自动调整！"
+invalidMinPlayers: "§c最小玩家数至少为2，已自动调整！"
+invalidMaxPlayers: "§c最大玩家数至少为2，已自动调整！"
+notABlock: "§c这不是一个可以放置的方块！"
+addDisguiseBlock: "§a已添加伪装方块！"
+removeDisguiseBlock: "§a已移除伪装方块！"
+disguiseBlockNotInList: "§c这个方块不在可伪装列表里！"
+disguiseDependencyNotFound: "§c目前服务器未安装相关依赖，不支持伪装功能。\n§c请向服务器拥有者咨询。"
+undisguise: "§a§l已解除伪装"
+cageSuccessfullySet: "§a已设置笼子！"
+centerSuccessfullySet: "§a已设置地图中心！"
+lobbySet: "§a大厅已设置！"
+quitEditingMode: "§c你已退出地图编辑模式！"
+saveSuccessfully: "§a保存成功！"
+noPermission: "§c你没有权限执行这条命令！"
+joining: "§e正在加入 {displayName}..."
+mapNotFound: "§c加入失败：找不到地图 {name}！"
+cannotJoinGame: "§c加入失败！"
+notInGame: "§c你不在游戏中！"
+cannotOpenGUIDuringGame: "§c游戏期间无法打开菜单！"
+mapFull: "§c地图人数已满！"
+alreadyExists: "§c你已在这张地图中！"
+alreadyStarted: "§c游戏已经开始！"
+forceStarted: "§a已强制开始游戏！"
+repairCancel: "§c§l修复已取消"
+inCooldown: "§c技能冷却中！"
+rebelExists: "§c§l附近5格内存在游侠"
+QSkillsDropped: "§e「眷顾之能」§r降临在地图中心附近，拾取后将为§e「眷顾秘技」§r充能..."
+QSkillsPickUp: "§r{player}获得了§e「眷顾之能」§r！"
+finalSeconds:
+  main: "§b§l最终时刻"
+  sub: "§r猎手速度大幅提升，「捕获」的冷却时间缩短"
+cold: "§r前往§c§l暖源§r处并激活以躲避寒冷"
+eliminated:
+  main: "§c你现在是观察者！"
+  sub: "§7可使用 §r§l床 §7返回大厅"
+inRepairing: "§r位于{location}处的发信机正在被修复！"
+GUI:
+  normalTitle: "§7风行迷踪-普通模式"
+  winterTitle: "§7风行迷踪-冬季模式"
+  mode:
+    NORMAL: "§7普通"
+    WINTER: "§7冬季"
+  status:
+    NotStarted: "§a准备中..."
+    Preparing: "§c游戏中..."
+    inGaming: "§c游戏中..."
+    Ending: "§c恢复中..."
+  rejoin:
+    displayName: "§e重新加入"
+    Lore:
+      - ""
+      - "  §7不小心掉线了？"
+      - "  §7点这里或者输入/wt r以重连！"
+  empty:
+    displayName: "§c当你在凝视深渊的时候..."
+    Lore:
+      - ""
+      - "  §7深渊也在凝视你。"
+  availableGame:
+    displayName: "§c{displayName}"
+    Lore:
+      - ""
+      - "  §7{nowPlayers} / {maxPlayers}"
+      - "  §7模式：{MODE}"
+      - "  §7{status}"
+  normal:
+    displayName: "§e切换至普通模式"
+    Lore:
+      - ""
+      - "  §7点击以切换至普通模式列表"
+  winter:
+    displayName: "§e切换至冬季模式"
+    Lore:
+      - ""
+      - "  §7点击以切换至冬季模式列表"
+joinGame: "§e{player}加入了游戏 ({nowPlayers}/{maxPlayers})"
+leaveGame: "§e{player}离开了游戏 ({nowPlayers}/{maxPlayers})"
+gameGoingToStartTimer: "§e游戏即将开始！"
+gameGoingToStart: "§e游戏将在 {time}秒后开始！"
+notEnoughPlayers: "§c缺少足够玩家，已停止计时！"
+notCaptureable: "§c该玩家现在不可捕捉！"
+frozenBoardCast: "§b{player}§r已被冰冻！"
+frozen:
+  - "§b你现在已被禁锢，无法移动，持续10秒。"
+  - "§b你无需担心，此期间猎手无法将你捕捉。"
+hunter:
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+  - "§e                   §l风行迷踪                     "
+  - "                                                   "
+  - "§r             你的身份是：§c§l猎手                    "
+  - "§r             捕捉游侠，赢得胜利！                     "
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+rebelNormal:
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+  - "§e                   §l风行迷踪                     "
+  - "                                                   "
+  - "§r             你的身份是：§b§l游侠                    "
+  - "§r         逃避猎手的追逐，启动发信机，赢得胜利！                    "
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+rebelWinter:
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+  - "§e                   §l风行迷踪                     "
+  - "                                                   "
+  - "§r             你的身份是：§b§l游侠                    "
+  - "§r         逃避猎手的追逐，启动暖源，躲避寒冷，赢得胜利！                    "
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+hunterGoingToRelease: "§e猎手将在{time}秒后出动！"
+hunterReleased: "§e猎手已出动！"
+
+Skills:
+  tags:
+    available: "§7(右键使用)"
+    inCoolDown: "§7冷却中 {cd}s"
+    unavailable: "§7当前不可用"
+  hunter:
+    traceA:
+      displayName: "§e感应光环"
+      Lore:
+        - ""
+        - "§e探测周围区域，若存在游侠则标记其5秒内移动轨迹。"
+        - "§e冷却4秒，可用3次。"
+    captureE:
+      displayName: "§e捕获！"
+      Lore:
+        - ""
+        - "§e揭穿附近游侠伪装并捕获，其将直接被淘汰。"
+        - "§e冷却5秒，可用3次。"
+    freezeQ:
+      displayName: "§d禁锢咒法"
+      Lore:
+        - ""
+        - "§e随机解除一名游侠伪装并禁锢10秒，期间无法离开区域，无法被捕获。"
+        - "§e「眷顾之力」技能在拾取「眷顾之力」后获得，且一局游戏只能使用一次。"
+  rebel:
+    invisA:
+      displayName: "§e透明戏法"
+      Lore:
+        - ""
+        - "§e进入5秒隐匿状态，解除当前伪装。"
+        - "§e冷却30秒。"
+    disguiseE:
+      displayName: "§e伪装"
+      Lore:
+        - ""
+        - "§e随机变为场景物件或解除。"
+        - "§e无冷却。"
+    quickenStepsQ:
+      displayName: "§d星步疾行"
+      Lore:
+        - ""
+        - "§e30秒内大幅提升移动速度。"
+        - "§e「眷顾之力」技能在拾取「眷顾之力」后获得，且一局游戏只能使用一次。"
+identities:
+  hunter: "§c猎手"
+  rebel: "§b游侠"
+  eliminated: "§7淘汰"
+  null: "§7暂无"
+events:
+  hunterBeingReleased: "猎手出动"
+  QSkillsDropped: "「眷顾之能」掉落"
+  HunterStrengthen: "猎手获得加强"
+  GameEnd: "游戏结束"
+titles:
+  hunter: "§c「猎手」§r取得了胜利！"
+  rebel: "§b「游侠」§r取得了胜利！"
+  subtitle: "§r {totalTime}"
+scoreBoard:
+  waiting: "等待玩家进入..."
+  notAvailable: "无"
+  preparation:
+    - "§e§l风行迷踪" #第一行为标题
+    - "§7{date}"
+    - ""
+    - "游戏将在 §a{time} §r秒后开始"
+    - "模式：§e{MODE}"
+    - "地图：§e{displayName}"
+    - ""
+    - "§emc.dreamland.cn"
+  preparing:
+    - "§e§l风行迷踪"
+    - "§7{date}"
+    - "你的身份: {identity}"
+    - "下一个事件："
+    - "{event} §a{time}s"
+    - ""
+    - "§c§l猎手 §r{hunter}"
+    - ""
+    - "模式：§e{MODE}"
+    - "地图：§e{displayName}"
+    - "§emc.dreamland.cn"
+  inGaming:
+    - "§e§l风行迷踪"
+    - "§7{date}"
+    - "你的身份: {identity}"
+    - "下一个事件："
+    - "{event} §a{eventTime}s"
+    - ""
+    - "§c§l猎手 §r{hunter}"
+    - "§b§l游侠 §r{rebel1}"
+    - "§b§l游侠 §r{rebel2}"
+    - "§b§l游侠 §r{rebel3}"
+    - ""
+    - "模式：§e{MODE}"
+    - "地图：§e{displayName}"
+    - "§emc.dreamland.cn"
+signalingDevices:
+  NORMAL:
+    notRepaired: "§2§l发信机 §r0%"
+    repairing: "§2§l发信机 §a正在修复 {progress} §r{percent}%"
+    repaired: "§2§l发信机 §a修复成功"
+  WINTER:
+    notRepaired: "§7暖源 §r0%"
+    repairing: "§7暖源 §a正在启动 {progress} §r{percent}%"
+    repaired: "§7暖源 §c启动成功"
+stats:
+  stat:
+    - "§e风行迷踪 统计信息"
+    - "§e您一共游玩了{normal}次经典模式，{winter}次冬季模式"
+    - "§e扮演猎手次数：{hunter}"
+    - "§e扮演游侠次数：{rebel}"
+    - ""
+    - "§e作为游侠，您一共启动了{signalingDevices}次发信机"
+    - "§e作为猎手，您一共捕获了{capturedRebels}次游侠"
+  results:
+    win: "§a胜利"
+    lose: "§c失败"
+  afterGame:
+    rebel:
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7{date}"
+      - "            §e§l风行迷踪 {result}                   "
+      - "             §r本局角色：§b游侠"
+      - "            本局您修复了§e{amount}§r台发信机"
+      - ""
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7相关信息已被记录，请使用/wt stats查看！"
+    rebelWINTER:
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7{date}"
+      - "            §e§l风行迷踪 {result}                   "
+      - "             §r本局角色：§b游侠"
+      - "            本局您启动了§e{amount}§r次暖源"
+      - ""
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7相关信息已被记录，请使用/wt stats查看！"
+    hunter:
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7{date}"
+      - "            §e§l风行迷踪 {result}                   "
+      - "             §r本局角色：§c猎手"
+      - "            §r本局您捕获了§e{amount}§r个游侠"
+      - ""
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7相关信息已被记录，请使用/wt stats查看！"

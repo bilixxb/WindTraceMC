@@ -1,0 +1,19 @@
+#示例，后续写配置时按这个写
+#mini101A:
+#  world: "mini101A"
+#  name: "mini101A"
+#  displayName: "风行迷踪-蒙德城"
+#  type: "normal" #normal/winter
+#  maxPlayers: 4
+#  minPlayers: 4
+#  hunters: 1
+#  hunterPercent: "25%" #数量与百分比不能共存
+#  center:
+#    x: 192
+#    y: 78
+#    z: 10
+#  signalDevices:
+#    1:
+#      x: 192
+#      y: 78
+#      z: 10

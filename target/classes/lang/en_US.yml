@@ -1,0 +1,313 @@
+startup:
+  - "Welcome to WindTrace Plugin!"
+  - "Created by XXBGames From BiliBili"
+
+help:
+  header: "§eWindTrace MC"
+  help: "§e/wt help Show this message"
+  join: "§e/wt join Join a map"
+  rejoin: "§e/wt rejoin or /wt r Rejoin a game that has already started"
+  stat: "§e/wt stat Display statistics"
+  create: "§e/wt create <internalName> <displayName> Create a new map"
+  attributes:
+    out: "§e/wt attributes Set map attributes (/wt help attributes for more info)"
+    mode: "§e/wt attributes mode <normal/winter> Set map mode"
+    minplayers: "§e/wt attributes minplayers <number> Set minimum players"
+    maxplayers: "§e/wt attributes maxplayers <number> Set maximum players"
+    hunteramount: "§e/wt attributes hunteramount <number/percentage> Set number of hunters"
+  setCage: "§e/wt setCage Set the hunter cage during preparation phase"
+  setCenter: "§e/wt setCenter Set the map center (waiting area before game and spawn point after game start)"
+  save: "§e/wt save Save the map currently in editing mode"
+  setdevice: "§e/wt setdevice Set a signaling device/heat source"
+  removedevice: "§e/wt removedevice Remove a signaling device/heat source"
+  forcestart: "§e/wt forcestart Force start a game"
+
+commandFailed: "§cThis command cannot be used right now!"
+notInEditingMode: "§cThis command can only be used in map editing mode!"
+createSuccessful:
+  - "§aSuccessfully created/loaded {internalName}!"
+  - "§aUse /tp <x> <y> <z> to teleport to the map location"
+createFailedWorldNotExists: "§cFailed to create {internalName}: World not found!"
+signalingDeviceSet:
+  - "§aRight-click a block to set it as a signaling device."
+  - "§aYou have 60 seconds to do so."
+signalingDeviceRemoving:
+  - "§aRight-click a signaling device to remove it."
+  - "§aYou have 60 seconds to do so."
+alreadyInSettingSignalingDeviceMode: "§cYou are already in signaling device setting mode! Right-click a block to set it."
+alreadyInEditingMode: "§cYou are already in editing mode!"
+successfullySetSignalingDevice: "§aSignaling device set successfully!"
+successfullyRemoveSignalingDevice: "§aSignaling device removed successfully!"
+invalidMode: "§cInvalid map mode! Available modes: NORMAL, WINTER"
+minBiggerThanMax: "§cMinimum players cannot be greater than maximum players!"
+maxSmallerThanMin: "§cMaximum players cannot be less than minimum players!"
+hunterMoreThanMax: "§cNumber of hunters cannot be greater than maximum players!"
+modeSuccessfullySet: "§aMap mode set to {MODE}!"
+minPlayersSuccessfullySet: "§aMinimum players set to {MINPLAYERS}!"
+maxPlayersSuccessfullySet: "§aMaximum players set to {MAXPLAYERS}!"
+hunterAmountSuccessfullySet: "§aNumber of hunters set to {HUNTERAMOUNT}!"
+hunterAmountSuccessfullySetPercent: "§aNumber of hunters set to {PERCENT}% of total players ({HUNTERAMOUNT})!"
+invalidNumberFormat: "§cInvalid number format!"
+invalidPercent: "§cInvalid percentage!"
+zeroHunterAmount: "§cAt least 1 hunter is required, automatically set to 1!"
+atLeastOneRebel: "§cAt least 1 rebel is required, automatically adjusted!"
+invalidMinPlayers: "§cMinimum players must be at least 2, automatically adjusted!"
+invalidMaxPlayers: "§cMaximum players must be at least 2, automatically adjusted!"
+notABlock: "§cThis is not a placeable block!"
+addDisguiseBlock: "§aDisguise block added!"
+removeDisguiseBlock: "§aDisguise block removed!"
+disguiseBlockNotInList: "§cThis block is not in the disguise list!"
+disguiseDependencyNotFound: "§cThe required disguise dependency is not installed on this server.\n§cPlease contact the server owner."
+undisguise: "§a§lUndisguised"
+cageSuccessfullySet: "§aCage set successfully!"
+centerSuccessfullySet: "§aMap center set successfully!"
+lobbySet: "§aLobby set successfully!"
+quitEditingMode: "§cYou have exited map editing mode!"
+saveSuccessfully: "§aSaved successfully!"
+noPermission: "§cYou do not have permission to execute this command!"
+joining: "§eJoining {displayName}..."
+mapNotFound: "§cJoin failed: Map {name} not found!"
+cannotJoinGame: "§cJoin failed!"
+notInGame: "§cYou are not in a game!"
+cannotOpenGUIDuringGame: "§cCannot open menu during a game!"
+mapFull: "§cMap is full!"
+alreadyExists: "§cYou are already in this map!"
+alreadyStarted: "§cGame has already started!"
+forceStarted: "§aGame force started!"
+repairCancel: "§c§lRepair canceled"
+inRepairing: "§rThe signaling device at {location} is being repaired!"
+inCooldown: "§cSkill is on cooldown!"
+finalSeconds:
+  main: "§b§lFinal Seconds"
+  sub: "§rHunter speed increased, Capture cooldown reduced"
+rebelExists: "§c§lA rebel is within 5 blocks"
+QSkillsDropped: "§e「Grace of Favor」§rdescends near the map center. Pick it up to charge your §e「Ultimate Skill」§r..."
+QSkillsPickUp: "§r{player} obtained §e「Grace of Favor」§r!"
+cold: "§rGo to §c§lheat sources§r and activate them to avoid the cold"
+eliminated:
+  main: "§cYou are now a spectator!"
+  sub: "§7Use §r§lBED §7to return to the lobby"
+
+GUI:
+  normalTitle: "§7WindTrace - Normal Mode"
+  winterTitle: "§7WindTrace - Winter Mode"
+  mode:
+    NORMAL: "§7Normal"
+    WINTER: "§7Winter"
+  status:
+    NotStarted: "§aWaiting..."
+    Preparing: "§cIn Game..."
+    inGaming: "§cIn Game..."
+    Ending: "§cResetting..."
+  rejoin:
+    displayName: "§eRejoin"
+    Lore:
+      - ""
+      - "  §7Disconnected accidentally?"
+      - "  §7Click here or use /wt r to reconnect!"
+  empty:
+    displayName: "§cWhen you gaze into the abyss..."
+    Lore:
+      - ""
+      - "  §7The abyss gazes also into you."
+  availableGame:
+    displayName: "§c{displayName}"
+    Lore:
+      - ""
+      - "  §7{nowPlayers} / {maxPlayers}"
+      - "  §7Mode: {MODE}"
+      - "  §7{status}"
+  normal:
+    displayName: "§eSwitch to Normal Mode"
+    Lore:
+      - ""
+      - "  §7Click to switch to Normal Mode list"
+  winter:
+    displayName: "§eSwitch to Winter Mode"
+    Lore:
+      - ""
+      - "  §7Click to switch to Winter Mode list"
+
+joinGame: "§e{player} joined the game ({nowPlayers}/{maxPlayers})"
+leaveGame: "§e{player} left the game ({nowPlayers}/{maxPlayers})"
+gameGoingToStartTimer: "§eGame is about to start!"
+gameGoingToStart: "§eGame will start in {time} seconds!"
+notEnoughPlayers: "§cNot enough players, countdown stopped!"
+notCaptureable: "§cThis player cannot be captured right now!"
+frozenBoardCast: "§b{player}§r has been frozen!"
+frozen:
+  - "§bYou have been frozen and cannot move for 10 seconds."
+  - "§bDon't worry, hunters cannot capture you during this time."
+hunter:
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+  - "§e                   §lWindTrace                     "
+  - "                                                   "
+  - "§r             Your identity: §c§lHUNTER                    "
+  - "§r             Capture rebels to win!                     "
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+rebelNormal:
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+  - "§e                   §lWindTrace                     "
+  - "                                                   "
+  - "§r             Your identity: §b§lREBEL                    "
+  - "§r         Escape the hunters, activate signaling devices, and win!                    "
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+rebelWinter:
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+  - "§e                   §lWindTrace                     "
+  - "                                                   "
+  - "§r             Your identity: §b§lREBEL                    "
+  - "§r         Escape the hunters, activate heat sources, avoid the cold, and win!                    "
+  - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+hunterGoingToRelease: "§eHunters will be released in {time} seconds!"
+hunterReleased: "§eHunters have been released!"
+
+Skills:
+  tags:
+    available: "§7(Right-click to use)"
+    inCoolDown: "§7Cooldown {cd}s"
+    unavailable: "§7Currently unavailable"
+  hunter:
+    traceA:
+      displayName: "§eAura of Detection"
+      Lore:
+        - ""
+        - "§eScan the surrounding area. If a rebel is detected, mark their movement trail for 5 seconds."
+        - "§eCooldown 4s, 3 charges."
+    captureE:
+      displayName: "§eCapture!"
+      Lore:
+        - ""
+        - "§eReveal and capture a nearby rebel, eliminating them instantly."
+        - "§eCooldown 5s, 3 charges."
+    freezeQ:
+      displayName: "§dFreezing Curse"
+      Lore:
+        - ""
+        - "§eRandomly reveal one rebel and freeze them for 10 seconds. They cannot leave the area and cannot be captured during this time."
+        - "§eThis is an ultimate skill obtained after picking up Grace of Favor, usable once per game."
+  rebel:
+    invisA:
+      displayName: "§eVanishing Trick"
+      Lore:
+        - ""
+        - "§eBecome invisible for 5 seconds and remove your current disguise."
+        - "§eCooldown 30s."
+    disguiseE:
+      displayName: "§eDisguise"
+      Lore:
+        - ""
+        - "§eRandomly transform into a block or remove disguise."
+        - "§eNo cooldown."
+    quickenStepsQ:
+      displayName: "§dSwift Steps"
+      Lore:
+        - ""
+        - "§eGreatly increase movement speed for 30 seconds."
+        - "§eThis is an ultimate skill obtained after picking up Grace of Favor, usable once per game."
+
+identities:
+  hunter: "§cHunter"
+  rebel: "§bRebel"
+  eliminated: "§7Eliminated"
+  null: "§7None"
+events:
+  hunterBeingReleased: "Hunters release"
+  QSkillsDropped: "§oGrace of Favor§r Drops"
+  HunterStrengthen: "Strengthen Hunters"
+  GameEnd: "Game Ends"
+titles:
+  hunter: "§c§oHUNTER§r§r wins!"
+  rebel: "§b§oREBEL§r§r wins!"
+  subtitle: "§r {totalTime}"
+
+scoreBoard:
+  waiting: "Waiting for players..."
+  notAvailable: "N/A"
+  preparation:
+    - "§e§lWindTrace"
+    - "§7{date}"
+    - ""
+    - "Game starts in §a{time} §rseconds"
+    - "Mode: §e{MODE}"
+    - "Map: §e{displayName}"
+    - ""
+    - "§emc.dreamland.cn"
+  preparing:
+    - "§e§lWindTrace"
+    - "§7{date}"
+    - "Your identity: {identity}"
+    - "Next event:"
+    - "{event} §a{time}s"
+    - ""
+    - "§c§lHunter §r{hunter}"
+    - ""
+    - "Mode: §e{MODE}"
+    - "Map: §e{displayName}"
+    - "§emc.dreamland.cn"
+  inGaming:
+    - "§e§lWindTrace"
+    - "§7{date}"
+    - "Your identity: {identity}"
+    - "Next event:"
+    - "{event} §a{eventTime}s"
+    - ""
+    - "§c§lHunter §r{hunter}"
+    - "§b§lRebel §r{rebel}"
+    - "§b§lRebel §r{rebel}"
+    - "§b§lRebel §r{rebel}"
+    - ""
+    - "Mode: §e{MODE}"
+    - "Map: §e{displayName}"
+    - "§emc.dreamland.cn"
+
+signalingDevices:
+  NORMAL:
+    notRepaired: "§2§lSignaling Device §r0%"
+    repairing: "§2§lSignaling Device §aRepairing {progress} §r{percent}%"
+    repaired: "§2§lSignaling Device §aRepaired"
+  WINTER:
+    notRepaired: "§7Heat Source §r0%"
+    repairing: "§7Heat Source §aActivating {progress} §r{percent}%"
+    repaired: "§7Heat Source §cActivated"
+
+stats:
+  stat:
+    - "§eWindTrace Statistics"
+    - "§eYou played {normal} Normal games and {winter} Winter games"
+    - "§eTimes as Hunter: {hunter}"
+    - "§eTimes as Rebel: {rebel}"
+    - ""
+    - "§eAs Rebel, you activated {signalingDevices} signaling devices"
+    - "§eAs Hunter, you captured {capturedRebels} rebels"
+  results:
+    win: "§aWin"
+    lose: "§cLoss"
+  afterGame:
+    rebel:
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7{date}"
+      - "            §e§lWindTrace {result}                   "
+      - "             §rYour role: §bRebel"
+      - "            You repaired §e{amount}§r signaling devices this game"
+      - ""
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7Stats have been recorded. Use /wt stats to view!"
+    rebelWINTER:
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7{date}"
+      - "            §e§lWindTrace {result}                   "
+      - "             §rYour role: §bRebel"
+      - "            You activated §e{amount}§r heat sources this game"
+      - ""
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7Stats have been recorded. Use /wt stats to view!"
+    hunter:
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7{date}"
+      - "            §e§lWindTrace {result}                   "
+      - "             §rYour role: §cHunter"
+      - "            You captured §e{amount}§r rebels this game"
+      - ""
+      - "§a■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■"
+      - "§7Stats have been recorded. Use /wt stats to view!"
