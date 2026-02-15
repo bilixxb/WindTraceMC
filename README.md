@@ -48,10 +48,10 @@
 
 - /wt join 这会打开一个可用游戏列表菜单，允许您选择游戏并加入。
 
-![图片无法加载](help\zh_resources\GUI_GameAvailable.png "插件自带的GUI")
+![图片无法加载](help/zh_resources/GUI_GameAvailable.png "插件自带的GUI")
 - /wt stats 您可以使用该命令获取统计数据。
 
-![图片无法加载](help\zh_resources\wtstats.png "统计信息")
+![图片无法加载](help/zh_resources/wtstats.png "统计信息")
 
 
 
