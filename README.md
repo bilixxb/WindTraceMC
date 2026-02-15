@@ -1,4 +1,4 @@
-# WindTrace 风行迷踪MC版
+# <center> WindTrace 风行迷踪MC版 </center>
 
 [简体中文](/help/README_zh.md)      [English](/help/README_en.md)
 
@@ -77,3 +77,17 @@
 - `/wt attributes mode <模式名>` 设置地图模式。可选模式： `NORMAL`, `WINTER`。
 - `/wt attributes minPlayers <数量>` 设置最小人数。默认情况下为4。
 - `/wt attributes maxPlayers <数量>` 设置最大人数。默认情况下为4。
+- `/wt attributes hunterAmount <数量>` 设置猎手的数量。默认情况下为1。
+- `/wt attributes addDisguiseBlock` 在地图的伪装列表里添加手中方块。
+- `/wt attributes removeDisguiseBlock` 在地图的伪装列表里移除手中方块。
+
+> 编辑结束后别忘了用 `/wt save` 保存。
+
+## 然后还要写什么...?
+我还想写点什么，但是我忘了...
+哦对了，记得关注[游戏解说小小白](https://space.bilibili.com/569992035)！！！
+
+## 星图
+
+[![星图](https://api.star-history.com/svg?repos=bilixxb/WindTraceMC&type=date&legend=top-left)](https://www.star-history.com/#bilixxb/WindTraceMC&type=date&legend=top-left)
+
